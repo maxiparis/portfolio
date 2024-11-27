@@ -2,6 +2,9 @@ body, #root {
   min-height: 100vh;
   /*background-color: #050505; !* Replace with your desired color *!*/
 }
+* {
+  transition: background-color 0.5s ease; /* 0.5s transition time for background-color */
+}
 
 .bg-gray {
   background-color: #191919;
