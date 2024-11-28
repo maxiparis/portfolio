@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './App.css'
 import App from './App.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import {ThemeSetter} from "./ThemeSetter.jsx";
+import {ThemeSetter} from "./components/ThemeSetter.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

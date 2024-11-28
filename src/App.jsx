@@ -2,8 +2,9 @@ import './App.css'
 import {BrowserRouter} from "react-router-dom";
 import 'react-bootstrap'
 import {Button, Container, Nav, Navbar} from "react-bootstrap";
-import { useTheme } from "./ThemeSetter.jsx";
+import { useTheme } from "./components/ThemeSetter.jsx";
 import {useEffect} from "react";
+import NavigationBar from "./components/Navbar.jsx";
 
 
 function App() {
@@ -28,33 +29,7 @@ function App() {
 
     return (
     <BrowserRouter >
-        <Navbar expand="lg" className={theme === "light" ? "bg-light" :"bg-gray"}  variant={theme === "light" ? "light" :"dark"} fixed="top">
-            <Container>
-                <Navbar.Brand className={theme === "light" ? "text-dark" : "text-white"} href="#home">MP</Navbar.Brand>
-                <Navbar.Toggle aria-controls="navbar-content" />
-                <Navbar.Collapse id="navbar-content" className="justify-content-end">
-                    <Nav >
-                        <Nav.Item>
-                            <Nav.Link className={theme === "light" ? "text-dark" : "text-white"} href="#home">Home</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link className={theme === "light" ? "text-dark" : "text-white"} href="#home">Home</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link className={theme === "light" ? "text-dark" : "text-white"} href="#home">Home</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link className={theme === "light" ? "text-dark" : "text-white"} href="#home">Home</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Button onClick={toggleTheme}>
-                                {theme === "light" ? "Dark" : "Light"}
-                            </Button>
-                        </Nav.Item>
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+        <NavigationBar />
 
         <Container className="mt-5">
                 <h1 className={ theme === "light" ? "text-black" : "text-white" } >Hello World!</h1>
