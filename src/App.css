@@ -1,7 +1,22 @@
-body, #root {
-  /*min-height: 100vh;*/
-  /*background-color: #050505; !* Replace with your desired color *!*/
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
 * {
   transition: background-color 0.5s ease; /* 0.5s transition time for background-color */
 }
@@ -9,6 +24,18 @@ body, #root {
 .bg-gray {
   background-color: #191919;
 }
+
+.social-icons a {
+  color: inherit; /* Matches theme text color */
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #0077b5; /* LinkedIn Blue for hover effect */
+  transform: translateY(-10px); /* Slight zoom on hover */
+}
+
 
 
 /*.logo {*/

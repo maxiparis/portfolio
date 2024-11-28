@@ -5,6 +5,7 @@ import {Button, Container, Nav, Navbar} from "react-bootstrap";
 import { useTheme } from "./components/ThemeSetter.jsx";
 import {useEffect} from "react";
 import NavigationBar from "./components/Navbar.jsx";
+import SiteFooter from "./components/SiteFooter.jsx";
 
 
 function App() {
@@ -28,12 +29,16 @@ function App() {
 
 
     return (
-    <BrowserRouter >
-        <NavigationBar />
+    <BrowserRouter>
+        <div className="d-flex flex-column min-vh-100">
+            <NavigationBar />
 
-        <Container className="mt-5">
+            <Container className="d-flex flex-column flex-grow-1 justify-content-center align-items-center">
                 <h1 className={ theme === "light" ? "text-black" : "text-white" } >Hello World!</h1>
-        </Container>
+            </Container>
+
+            <SiteFooter />
+        </div>
 
     </BrowserRouter>
   )

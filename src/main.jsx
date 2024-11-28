@@ -8,7 +8,7 @@ import {ThemeSetter} from "./components/ThemeSetter.jsx";
 createRoot(document.getElementById('root')).render(
   <StrictMode>
       <ThemeSetter>
-        <App />
+        <App/>
       </ThemeSetter>
   </StrictMode>,
 )
