@@ -32,9 +32,22 @@ body {
 }
 
 .social-icons a:hover {
-  color: #0077b5; /* LinkedIn Blue for hover effect */
-  transform: translateY(-10px); /* Slight zoom on hover */
+  color: #0077b5;
+  transform: translateY(-7px);
 }
+
+.main-cornered-containers-dark {
+  background-color: #282828;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.space-to-navbar {
+  padding-top: 56px;
+}
+
 
 
 
@@ -44,8 +57,8 @@ body {
 /*  will-change: filter;*/
 /*  transition: filter 300ms;*/
 /*}*/
-/*.logo:hover {*/
-/*  filter: drop-shadow(0 0 2em #646cffaa);*/
+/*a:hover {*/
+/*  filter: drop-shadow(0 0 1em #646cffaa);*/
 /*}*/
 /*.logo.react:hover {*/
 /*  filter: drop-shadow(0 0 2em #61dafbaa);*/

@@ -6,6 +6,7 @@ import { useTheme } from "./components/ThemeSetter.jsx";
 import {useEffect} from "react";
 import NavigationBar from "./components/Navbar.jsx";
 import SiteFooter from "./components/SiteFooter.jsx";
+import Hero from "./components/Hero.jsx";
 
 
 function App() {
@@ -33,9 +34,7 @@ function App() {
         <div className="d-flex flex-column min-vh-100">
             <NavigationBar />
 
-            <Container className="d-flex flex-column flex-grow-1 justify-content-center align-items-center">
-                <h1 className={ theme === "light" ? "text-black" : "text-white" } >Hello World!</h1>
-            </Container>
+            <Hero />
 
             <SiteFooter />
         </div>
