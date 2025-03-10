@@ -1,11 +1,10 @@
 import {Container} from "react-bootstrap";
-import {useTheme} from "./ThemeSetter.jsx";
+import {useTheme} from "./ThemeSetter.tsx";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
 export default function SiteFooter() {
     const { theme, toggleTheme } = useTheme();
-
 
     return (
         <footer className="site-footer">

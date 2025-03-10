@@ -1,6 +1,5 @@
-import {Component} from "react";
 import {Button, Container, Nav, Navbar} from "react-bootstrap";
-import {useTheme} from "./ThemeSetter.jsx";
+import {useTheme} from "./ThemeSetter.tsx";
 
 export default function NavigationBar() {
     const { theme, toggleTheme } = useTheme();

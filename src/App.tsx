@@ -2,11 +2,11 @@ import './App.css'
 import {BrowserRouter} from "react-router-dom";
 import 'react-bootstrap'
 import {Button, Container, Nav, Navbar} from "react-bootstrap";
-import { useTheme } from "./components/ThemeSetter.jsx";
+import { useTheme } from "./components/ThemeSetter.js";
 import {useEffect} from "react";
-import NavigationBar from "./components/Navbar.jsx";
-import SiteFooter from "./components/SiteFooter.jsx";
-import Hero from "./components/Hero.jsx";
+import NavigationBar from "./components/Navbar.tsx";
+import SiteFooter from "./components/SiteFooter.tsx";
+import Hero from "./components/Hero.tsx";
 
 
 function App() {
@@ -33,9 +33,7 @@ function App() {
     <BrowserRouter>
         <div className="d-flex flex-column min-vh-100">
             <NavigationBar />
-
             <Hero />
-
             <SiteFooter />
         </div>
 
