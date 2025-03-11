@@ -25,7 +25,7 @@ function App() {
                 body.style.backgroundColor = "#000000"; // Set the background color you want
             }
         }
-    }, [theme]) // Empty array ensures this runs once when the component mounts
+    }, [theme])
 
 
 
