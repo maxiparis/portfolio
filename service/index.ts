@@ -1,14 +1,16 @@
-import * as path from "node:path";
 import express = require("express");
-var app = express();
+// @ts-ignore
+import cors = require('cors');
+
+const app = express();
 
 const PORT = 3001;
 
-// Define the static folder path
-const staticFolderPath = path.join(__dirname, "public");
-
-// Serve static files from the "public" folder
-app.use(express.static(staticFolderPath));
+// Serve up the static content
+app.use(cors());
+//make sure to parse the body from json
+app.use(express.json());
+app.use(express.static('dist'));
 
 // Start the server
 app.listen(PORT, () => {
