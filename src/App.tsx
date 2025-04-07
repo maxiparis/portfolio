@@ -9,12 +9,14 @@ import Hero from "./components/Hero.tsx";
 import {Container} from "react-bootstrap";
 
 function About() {
+    const { theme } = useTheme();
+    // @ts-ignore
     return (
-      <h1>ABOUT</h1>
+      <h1 className={theme === "light" ? "text-dark" : "text-white"}>ABOUT</h1>
     )
 }
 function App() {
-    const { theme, toggleTheme } = useTheme();
+    const { theme } = useTheme();
 
     useEffect(() => {
         // Access the root element and set the background color
@@ -30,8 +32,6 @@ function App() {
             }
         }
     }, [theme])
-
-
 
     return (
     <BrowserRouter>
