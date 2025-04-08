@@ -37,9 +37,9 @@ body {
 }
 
 .main-cornered-containers-dark {
-  background-color: #282828;
+  background-color: #4f5c6b;
   color: #ffffff;
-  border-radius: 10px;
+  border-radius: 25px;
   padding: 1rem;
   margin: 1rem;
 }
@@ -47,19 +47,3 @@ body {
 .space-to-navbar {
   padding-top: 56px;
 }
-
-
-
-
-/*.logo {*/
-/*  height: 6em;*/
-/*  padding: 1.5em;*/
-/*  will-change: filter;*/
-/*  transition: filter 300ms;*/
-/*}*/
-/*a:hover {*/
-/*  filter: drop-shadow(0 0 1em #646cffaa);*/
-/*}*/
-/*.logo.react:hover {*/
-/*  filter: drop-shadow(0 0 2em #61dafbaa);*/
-/*}*/

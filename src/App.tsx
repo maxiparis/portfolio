@@ -10,7 +10,6 @@ import {Container} from "react-bootstrap";
 
 function About() {
     const { theme } = useTheme();
-    // @ts-ignore
     return (
       <h1 className={theme === "light" ? "text-dark" : "text-white"}>ABOUT</h1>
     )
