@@ -27,7 +27,10 @@ export default function NavigationBar() {
                         </Nav.Item>
                         <Nav.Item>
                             <Button onClick={toggleTheme}>
-                                {theme === "light" ? "Dark" : "Light"}
+                                {theme === "light"
+                                  ? <i className="bi bi-moon-fill"></i>
+                                  : <i className="bi bi-sun-fill"></i>
+                                }
                             </Button>
                         </Nav.Item>
                     </Nav>

@@ -39,8 +39,13 @@ export default function Hero() {
                     <i className="bi bi-linkedin"></i>
                   </a>
                 </Stack>
-                
-                <Button style={{backgroundColor: "orange", }} className="text-black border-0 px-5 py-3 rounded-4">
+
+                <Button
+                  style={{backgroundColor: "orange"}}
+                  className="text-black border-0 px-5 py-3 rounded-4"
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#ff9900")}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "orange")}
+                >
                   <i className="bi bi-lightning-fill me-2"></i>
                   Call To Action
                 </Button>
