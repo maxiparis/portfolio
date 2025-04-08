@@ -8,6 +8,8 @@ logs
 **/*.backup.*
 **/*.back.*
 
+.idea/vcs.xml
+
 node_modules
 bower_components
 
@@ -17,5 +19,8 @@ bower_components
 psd
 thumb
 sketch
+
+
+/service/index.js
 
 # End of https://www.toptal.com/developers/gitignore/api/react
