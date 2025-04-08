@@ -17,10 +17,10 @@ export default function Hero() {
                 className="img-fluid rounded-5 p-4"
                 style={{transition: "transform 0.3s ease"}}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "scale(1.05)";
+                  e.currentTarget.style.transform = "scale(1.05) rotate(1.5deg)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "scale(1)";
+                  e.currentTarget.style.transform = "scale(1) rotate(0)";
                 }}
               />
             </Col >
@@ -59,6 +59,7 @@ export default function Hero() {
 
                 <Button
                   style={{
+                    color: "black",
                     backgroundImage: "linear-gradient(90deg, orange, yellow)",
                     transition: "background 0.3s ease, color 0.7s ease, box-shadow 0.3s ease"
                   }}
