@@ -29,6 +29,7 @@ body {
   color: inherit; /* Matches theme text color */
   text-decoration: none;
   transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 32px
 }
 
 .social-icons a:hover {
@@ -36,10 +37,22 @@ body {
   transform: translateY(-7px);
 }
 
+.social-icons-hero a {
+  color: inherit; /* Matches theme text color */
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 30px
+}
+
+.social-icons-hero a:hover {
+  color: orange;
+  transform: translateY(-7px);
+}
+
 .main-cornered-containers-dark {
-  background-color: #282828;
+  background-color: #4f5c6b;
   color: #ffffff;
-  border-radius: 10px;
+  border-radius: 25px;
   padding: 1rem;
   margin: 1rem;
 }
@@ -47,19 +60,3 @@ body {
 .space-to-navbar {
   padding-top: 56px;
 }
-
-
-
-
-/*.logo {*/
-/*  height: 6em;*/
-/*  padding: 1.5em;*/
-/*  will-change: filter;*/
-/*  transition: filter 300ms;*/
-/*}*/
-/*a:hover {*/
-/*  filter: drop-shadow(0 0 1em #646cffaa);*/
-/*}*/
-/*.logo.react:hover {*/
-/*  filter: drop-shadow(0 0 2em #61dafbaa);*/
-/*}*/

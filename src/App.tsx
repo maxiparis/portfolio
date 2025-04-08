@@ -1,16 +1,21 @@
 import './App.css'
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import 'react-bootstrap'
-import {Button, Container, Nav, Navbar} from "react-bootstrap";
 import { useTheme } from "./components/ThemeSetter.js";
 import {useEffect} from "react";
 import NavigationBar from "./components/Navbar.tsx";
 import SiteFooter from "./components/SiteFooter.tsx";
 import Hero from "./components/Hero.tsx";
+import {Container} from "react-bootstrap";
 
-
+function About() {
+    const { theme } = useTheme();
+    return (
+      <h1 className={theme === "light" ? "text-dark" : "text-white"}>ABOUT</h1>
+    )
+}
 function App() {
-    const { theme, toggleTheme } = useTheme();
+    const { theme } = useTheme();
 
     useEffect(() => {
         // Access the root element and set the background color
@@ -27,16 +32,20 @@ function App() {
         }
     }, [theme])
 
-
-
     return (
     <BrowserRouter>
         <div className="d-flex flex-column min-vh-100">
             <NavigationBar />
-            <Hero />
+            <Container
+              className="space-to-navbar body d-flex flex-column flex-grow-1 justify-content-top align-items-center">
+            <Routes>
+                <Route path="/" element={<Hero />} />
+                <Route path="/about" element={<About />} />
+            </Routes>
+            </Container>
+
             <SiteFooter />
         </div>
-
     </BrowserRouter>
   )
 }
