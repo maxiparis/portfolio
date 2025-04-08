@@ -7,15 +7,25 @@ export default function Hero() {
     return (
         <Container className="main-cornered-containers-dark mt-5">
           <Row>
-            <Col>
+            <Col
+              md={6}
+              className="d-flex flex-column justify-content-center align-items-center"
+            >
               <img
                 src="/assets/picture/profile.jpeg"
                 alt="profile"
                 className="img-fluid rounded-5 p-4"
               />
-            </Col>
-            <Col className="d-flex flex-column justify-content-center align-items-center">
-              <Stack direction="vertical" gap={4} className="d-flex flex-column justify-content-center align-items-center p-5">
+            </Col >
+            <Col
+              md={6}
+              className="d-flex flex-column justify-content-center align-items-center"
+            >
+              <Stack
+                direction="vertical"
+                gap={4}
+                className="d-flex flex-column justify-content-center align-items-center p-m-5"
+              >
                   <div>
                     <h1 className="text-center">Hi! 👋 My name is </h1>
                     <h1 className="text-center">Maximiliano Paris </h1>
@@ -41,15 +51,20 @@ export default function Hero() {
                 </Stack>
 
                 <Button
-                  style={{backgroundColor: "orange", transition: "background-color 0.3s ease, color 0.3s ease"}}
-                  className="text-black border-0 px-5 py-3 rounded-4"
+                  style={{
+                    backgroundImage: "linear-gradient(90deg, orange, yellow)",
+                    transition: "background 0.3s ease, color 0.7s ease, box-shadow 0.3s ease"
+                  }}
+                  className="border-0 px-5 py-3 rounded-4"
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = "#ffaa33";
+                    e.currentTarget.style.background = "linear-gradient(45deg, blue, violet)";
                     e.currentTarget.style.color = "white";
+                    e.currentTarget.style.boxShadow = "0 0 20px 5px white";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "orange";
+                    e.currentTarget.style.background = "linear-gradient(90deg, orange, yellow)";
                     e.currentTarget.style.color = "black";
+                    e.currentTarget.style.boxShadow = "none";
                   }}
                 >
                   <i className="bi bi-lightning-fill me-2"></i>
