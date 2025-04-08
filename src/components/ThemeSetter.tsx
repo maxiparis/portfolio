@@ -28,7 +28,7 @@ export const useTheme = () => {
 
 // ThemeSetter component to provide the theme context
 export function ThemeSetter({ children }: { children: React.ReactNode }) {
-    const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useState("dark");
     const styles = {
         light: {
             text: "text-dark",
