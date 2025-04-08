@@ -1,4 +1,4 @@
-import {Col, Container, Row} from "react-bootstrap";
+import {Button, Col, Container, Row, Stack} from "react-bootstrap";
 import {useTheme} from "./ThemeSetter.tsx";
 
 export default function Hero() {
@@ -14,10 +14,37 @@ export default function Hero() {
                 className="img-fluid rounded-5 p-4"
               />
             </Col>
-            <Col>
-              <h1>Hi! My name is</h1>
-              <h1>Maximiliano Paris</h1>
-              <h4>I am a Software Engineer.</h4>
+            <Col className="d-flex flex-column justify-content-center align-items-center">
+              <Stack direction="vertical" gap={4} className="d-flex flex-column justify-content-center align-items-center p-5">
+                  <div>
+                    <h1 className="text-center">Hi! 👋 My name is </h1>
+                    <h1 className="text-center">Maximiliano Paris </h1>
+                  </div>
+                <h4 className="text-center">I build iOS apps that enhance and simplify life.</h4>
+
+                
+                <Stack direction="horizontal" gap={4} className="social-icons-hero d-flex flex-row justify-content-center align-items-center">
+                  <a
+                    href="https://github.com/maxiparis"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="bi bi-github"></i>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/maximiliano-paris"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="bi bi-linkedin"></i>
+                  </a>
+                </Stack>
+                
+                <Button style={{backgroundColor: "orange", }} className="text-black border-0 px-5 py-3 rounded-4">
+                  <i className="bi bi-lightning-fill me-2"></i>
+                  Call To Action
+                </Button>
+              </Stack>
             </Col>
           </Row>
         </Container>

@@ -29,10 +29,23 @@ body {
   color: inherit; /* Matches theme text color */
   text-decoration: none;
   transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 32px
 }
 
 .social-icons a:hover {
   color: #0077b5;
+  transform: translateY(-7px);
+}
+
+.social-icons-hero a {
+  color: inherit; /* Matches theme text color */
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 30px
+}
+
+.social-icons-hero a:hover {
+  color: orange;
   transform: translateY(-7px);
 }
 
@@ -47,3 +60,11 @@ body {
 .space-to-navbar {
   padding-top: 56px;
 }
+
+.hero-button {
+  background-color: orange;
+}
+
+/*.hero-button:hover {*/
+/*  background-color: blue;*/
+/*}*/
