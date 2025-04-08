@@ -8,7 +8,9 @@ export default function NavigationBar() {
     return (
         <Navbar expand="lg" className={theme === "light" ? "bg-light" :"bg-gray"}  variant={theme === "light" ? "light" :"dark"} fixed="top">
             <Container>
-                <Navbar.Brand as={NavLink} className={getStyle.text} to="/">MP</Navbar.Brand>
+                <Navbar.Brand as={NavLink} className={getStyle.text} to="/">
+                    <i className={`bi bi-rocket-takeoff-fill bg-pr ${getStyle.rocketColor}`} style={{marginRight: "8px"}}></i>MP
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbar-content" />
                 <Navbar.Collapse id="navbar-content" className="justify-content-end">
                     <Nav >
@@ -26,11 +28,11 @@ export default function NavigationBar() {
                             <Nav.Link className={getStyle.text} href="contact">Contact</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Button onClick={toggleTheme}>
-                                {theme === "light"
-                                  ? <i className="bi bi-moon-fill"></i>
-                                  : <i className="bi bi-sun-fill"></i>
-                                }
+                            <Button
+                              variant={getStyle.themeVariant}
+                              onClick={toggleTheme}
+                              className="ms-lg-4">
+                                <i className={getStyle.themeIcon}></i>
                             </Button>
                         </Nav.Item>
                     </Nav>

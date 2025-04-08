@@ -41,10 +41,16 @@ export default function Hero() {
                 </Stack>
 
                 <Button
-                  style={{backgroundColor: "orange"}}
+                  style={{backgroundColor: "orange", transition: "background-color 0.3s ease, color 0.3s ease"}}
                   className="text-black border-0 px-5 py-3 rounded-4"
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#ff9900")}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "orange")}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = "#ffaa33";
+                    e.currentTarget.style.color = "white";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "orange";
+                    e.currentTarget.style.color = "black";
+                  }}
                 >
                   <i className="bi bi-lightning-fill me-2"></i>
                   Call To Action

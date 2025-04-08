@@ -6,7 +6,12 @@ import React, {createContext, useContext, useMemo, useState} from "react";
 interface ThemeContextType {
     theme: string;
     toggleTheme: () => void;
-    getStyle: {text: string}
+    getStyle: {
+        text: string,
+        themeIcon: string,
+        themeVariant: string,
+        rocketColor: string
+    }
 }
 
 // Create the context with undefined as the default value
@@ -27,9 +32,15 @@ export function ThemeSetter({ children }: { children: React.ReactNode }) {
     const styles = {
         light: {
             text: "text-dark",
+            themeIcon: "bi bi-moon-fill",
+            themeVariant: "outline-dark",
+            rocketColor: "text-primary"
         },
         dark: {
             text: "text-white",
+            themeIcon: "bi bi-sun-fill",
+            themeVariant: "outline-light",
+            rocketColor: "text-info"
         },
     };
 
