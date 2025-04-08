@@ -15,6 +15,13 @@ export default function Hero() {
                 src="/assets/picture/profile.jpeg"
                 alt="profile"
                 className="img-fluid rounded-5 p-4"
+                style={{transition: "transform 0.3s ease"}}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "scale(1.05)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "scale(1)";
+                }}
               />
             </Col >
             <Col
@@ -59,7 +66,7 @@ export default function Hero() {
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = "linear-gradient(45deg, blue, violet)";
                     e.currentTarget.style.color = "white";
-                    e.currentTarget.style.boxShadow = "0 0 20px 5px white";
+                    e.currentTarget.style.boxShadow = "0 0 20px 5px gray";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.background = "linear-gradient(90deg, orange, yellow)";
