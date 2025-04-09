@@ -24,9 +24,9 @@ export default function ContactForm() {
   };
 
   return (
-    <Container className={getStyle.contactFormBackground} style={{ maxWidth: '900px'}}>
+    <Container className={`${getStyle.contactFormBackground} py-3 mb-5 mt-3`}>
       <Form
-        className="px-5 py-3"
+        className="px-md-5 px-xs-1"
         ref={form}
         onSubmit={handleSubmit}
       >
@@ -67,9 +67,15 @@ export default function ContactForm() {
           />
         </Form.Group>
 
-        <div>
-          <Button variant="primary" type="submit" className="mt-3 submit-button">
-            Submit
+        <div className="d-flex flex-row justify-content-center mt-3">
+          <Button
+            className="mt-3"
+            variant="primary"
+            size={"lg"}
+            type="submit"
+          >
+            <i className="bi bi-envelope-fill me-2"></i>
+            Send Me A Message
           </Button>
         </div>
       </Form>
