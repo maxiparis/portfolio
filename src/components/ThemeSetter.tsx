@@ -10,7 +10,9 @@ interface ThemeContextType {
         text: string,
         themeIcon: string,
         themeVariant: string,
-        rocketColor: string
+        rocketColor: string,
+        contactForm: string,
+        contactFormBackground: string,
     }
 }
 
@@ -34,13 +36,17 @@ export function ThemeSetter({ children }: { children: React.ReactNode }) {
             text: "text-dark",
             themeIcon: "bi bi-moon-fill",
             themeVariant: "outline-dark",
-            rocketColor: "text-primary"
+            rocketColor: "text-primary",
+            contactForm: "input-light",
+            contactFormBackground: "contact-card-light"
         },
         dark: {
             text: "text-white",
             themeIcon: "bi bi-sun-fill",
             themeVariant: "outline-light",
-            rocketColor: "text-info"
+            rocketColor: "text-info",
+            contactForm: "input-dark",
+            contactFormBackground: "contact-card-dark"
         },
     };
 

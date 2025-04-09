@@ -57,6 +57,50 @@ body {
   margin: 1rem;
 }
 
+
 .space-to-navbar {
   padding-top: 56px;
 }
+
+/* Contact Form */
+.contact-card-dark {
+  background-color: #252525;
+  border-radius: 25px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.contact-card-light {
+  background-color: #c2c2c2;
+  border-radius: 25px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+
+.input-dark.form-label {
+  color: #bbbbbb;
+}
+
+.input-dark.form-control {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  color: #bbbbbb;
+}
+
+.input-dark.form-control:focus {
+  color: #bbbbbb; !important;
+}
+
+.input-light.form-label {
+  color: #191919;
+}
+
+.input-light.form-control {
+  background-color: rgb(255, 255, 255) !important;
+  color: #020000;
+}
+
+.input-light.form-control:focus {
+  color: #020000;
+}
+
