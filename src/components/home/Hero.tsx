@@ -1,5 +1,5 @@
 import {Button, Col, Container, Row, Stack} from "react-bootstrap";
-import {useTheme} from "./ThemeSetter.tsx";
+import {useTheme} from "../ThemeSetter.tsx";
 
 export default function Hero() {
     const { theme, toggleTheme } = useTheme();

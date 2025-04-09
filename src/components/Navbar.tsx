@@ -13,19 +13,18 @@ export default function NavigationBar() {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbar-content" />
                 <Navbar.Collapse id="navbar-content" className="justify-content-end">
-                    <Nav >
+                    <Nav>
                         <Nav.Item>
                             <Nav.Link className={getStyle.text} href="TODO">Resume</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            {/*This is all navlinks should look like: */}
                             <Nav.Link as={NavLink} className={getStyle.text} to="about">About</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link className={getStyle.text} href="home#projects">Projects</Nav.Link>
+                            <Nav.Link as={NavLink} className={getStyle.text} to="projects">Projects</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link className={getStyle.text} href="contact">Contact</Nav.Link>
+                            <Nav.Link as={NavLink} className={getStyle.text} to="contact">Contact</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
                             <Button
