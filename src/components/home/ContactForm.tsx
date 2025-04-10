@@ -6,13 +6,17 @@ import axios from "axios";
 export default function ContactForm() {
   const { getStyle } = useTheme();
   const [showToast, setShowToast] = useState(false);
-  const [formData, setFormData] = useState({
+  const [showErrorToast, setShowErrorToast] = useState(false);
+
+  const emptyForm = {
     name: '',
     email: '',
     message: '',
-  });
+  }
+  const [formData, setFormData] = useState(emptyForm);
 
   const form = useRef();
+
 
   const handleChange = (e: { target: { name: any; value: any; }; }) => {
     const { name, value } = e.target;
@@ -25,12 +29,13 @@ export default function ContactForm() {
 
     axios.post('/api/sendemail', formData)
       .then((response) => {
-        console.log('Message sent successfully:', response.data);
         setShowToast(true);
-        console.log('toast set to true');
+        console.log('Message sent successfully:', response.data);
+        setFormData(emptyForm);
       })
       .catch((error) => {
         console.error('Error sending message:', error);
+        setShowErrorToast(true);
       });
   };
 
@@ -39,6 +44,7 @@ export default function ContactForm() {
       <Container className={`${getStyle.contactFormBackground} py-3 mb-5 mt-3`}>
         <Form
           className="px-md-5 px-xs-1"
+          // @ts-ignore
           ref={form}
           onSubmit={handleSubmit}
         >
@@ -97,13 +103,30 @@ export default function ContactForm() {
         <Toast
           show={showToast}
           onClose={() => setShowToast(false)}
-          delay={3000} autohide
+          delay={5000} autohide
         >
-          <Toast.Header>
-            <i className="bi bi-check-circle-fill text-success me-2"></i>
+          <Toast.Header className="bg-primary text-light">
+            <i className="bi bi-check-circle-fill text-white me-2"></i>
             <strong className="me-auto">Success</strong>
           </Toast.Header>
-          <Toast.Body>Message sent successfully!</Toast.Body>
+          <Toast.Body className="bg-primary-subtle text-dark">
+            Message sent successfully!
+          </Toast.Body>
+        </Toast>
+
+        <Toast
+          className="bg-danger text-light"
+          show={showErrorToast}
+          onClose={() => setShowErrorToast(false)}
+          delay={5000} autohide
+        >
+          <Toast.Header className="bg-danger text-light">
+            <i className="bi bi-exclamation-circle-fill me-2"></i>
+            <strong className="me-auto">Oops!</strong>
+          </Toast.Header>
+          <Toast.Body className="bg-danger-subtle text-dark">
+            An unexpected error occurred. Try again later!
+          </Toast.Body>
         </Toast>
       </ToastContainer>
     </>
