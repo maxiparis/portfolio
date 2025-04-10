@@ -69,7 +69,92 @@ apiRouter.post('/sendemail', async (req, res) => {
   }
 })
 
+apiRouter.get('/commits', async (req, res) => {
+  const token = process.env.GITHUB_TOKEN;
 
+  if (!token) {
+    console.error('Missing GITHUB_TOKEN in environment variables.');
+    res.status(500).json({ message: 'Server configuration issue: Missing GITHUB_TOKEN' });
+    return
+  }
+
+  const graphqlQuery = {
+    query: `{
+        viewer {
+          repositories(first: 50, privacy: PUBLIC, orderBy: { field: UPDATED_AT, direction: DESC }) {
+            nodes {
+              name
+              url
+              refs(first: 5, refPrefix: "refs/heads/") {  # Fetches up to 5 branches
+                nodes {
+                  name
+                  target {
+                    ... on Commit {
+                      history(first: 1) {
+                        nodes {
+                          message
+                          committedDate
+                          url
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+  `
+  };
+
+  try {
+    const response = await axios.post('https://api.github.com/graphql', graphqlQuery, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const repos = response.data.data.viewer.repositories.nodes;
+    let commitsArray: {
+      repoName: string,
+      commitMessage: string,
+      date: Date,
+      dateString: string,
+      branch: string,
+      commitUrl: string,
+      repoUrl: string,
+    }[] = []
+    for (const repo of repos) {
+      for (const commits of repo.refs.nodes) {
+        const commit = commits.target.history.nodes[0]
+        commitsArray.push({
+          repoName: repo.name,
+          branch: commits.name,
+          commitMessage: commit.message,
+          date: new Date(commit.committedDate),
+          dateString: new Date(commit.committedDate).toLocaleString(),
+          commitUrl: commit.url,
+          repoUrl: repo.url,
+        })
+      }
+    }
+
+    commitsArray.sort((a, b) => {
+      return b.date.getTime() - a.date.getTime()
+    })
+
+    res.status(200).json(commitsArray.slice(0, 10)); //send the first 10 commits
+    return
+  } catch (error) {
+    // @ts-ignore
+    console.error('Error fetching data from GitHub GraphQL API:', error.response?.data || error.message);
+    // @ts-ignore
+    res.status(500).json({ message: 'Failed to fetch data from GitHub API', error: error.response?.data || error.message });
+    return
+  }
+})
 
 
 
