@@ -22,5 +22,6 @@ sketch
 .env
 
 /service/index.js
+*.sh
 
 # End of https://www.toptal.com/developers/gitignore/api/react
