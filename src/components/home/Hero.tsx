@@ -2,8 +2,6 @@ import {Button, Col, Container, Row, Stack} from "react-bootstrap";
 import {useTheme} from "../ThemeSetter.tsx";
 
 export default function Hero() {
-    const { theme, toggleTheme } = useTheme();
-
     return (
         <Container className="main-cornered-containers-dark mt-5">
           <Row>
