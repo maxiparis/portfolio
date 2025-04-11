@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import Commits from "../../../service/types/Commits.ts";
 import axios from "axios";
 import { useTheme } from "../ThemeSetter.tsx";
+import {Spinner} from "react-bootstrap";
 
 type LoadingState = "loading" | "success" | "error";
 
@@ -17,10 +18,15 @@ export function LatestCommits() {
 
   async function fetchData(){
     try {
-      //call the backend
+      // Call the backend
       let response = await axios.get("/api/commits");
-      setCommits(response.data);
-      setLoadingState("success");
+
+      if (response.status === 200) {
+        setCommits(response.data);
+        setLoadingState("success");
+      } else {
+        setLoadingState("error");
+      }
     } catch (error) {
       setLoadingState("error");
     }
@@ -35,7 +41,7 @@ export function LatestCommits() {
   return (
     <>
       {loadingState === "success" && renderCommits(commits)}
-      {loadingState === "loading" && <p>Loading...</p>}
+      {loadingState === "loading" && <Spinner className={`mt-5 ${getStyle.text}`}/>}
       {loadingState === "error" && <p>Failed to load commits.</p>}
     </>
   );
