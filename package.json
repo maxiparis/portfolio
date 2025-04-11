@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "server:compile": "tsc service/index.ts --outDir ./service --removeComments true",
-    "server:run": "node service/index.js",
+    "server:compile": "tsc -p tsconfig.server.json && node ImportPathUpdater.js",
+    "server:run": "node service/dist/server.js",
     "server:execute": "npm run server:compile && npm run server:run"
   },
   "dependencies": {
