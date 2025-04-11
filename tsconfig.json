@@ -12,6 +12,6 @@
     "forceConsistentCasingInFileNames": true,
     "allowImportingTsExtensions": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"],
+  "include": ["src", "service/**/*.ts"], // Include all .ts files inside service directory
+  "exclude": ["node_modules", "dist"]
 }
