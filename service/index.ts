@@ -16,7 +16,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('dist'));
 
-
 const apiRouter = express.Router();
 app.use('/api', apiRouter);
 
@@ -78,7 +77,26 @@ apiRouter.get('/commits', async (req, res) => {
     return
   }
 
-  const graphqlQuery = {
+  const languagesQuery = {
+    query: `{
+      viewer {
+        repositories(first: 50, privacy: PUBLIC, orderBy: { field: UPDATED_AT, direction: DESC }) {
+          nodes {
+            name
+            url
+            languages(first: 5, orderBy: { field: SIZE, direction: DESC }) {
+              nodes {
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+    `
+  }
+
+  const commitsQuery = {
     query: `{
         viewer {
           repositories(first: 50, privacy: PUBLIC, orderBy: { field: UPDATED_AT, direction: DESC }) {
@@ -109,14 +127,30 @@ apiRouter.get('/commits', async (req, res) => {
   };
 
   try {
-    const response = await axios.post('https://api.github.com/graphql', graphqlQuery, {
+    //TODO: fix this to have a
+    // Languages processing
+    const languagesResponse = await axios.post('https://api.github.com/graphql', languagesQuery, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    let languagesPerRepo = new Map<string, string[]>();
+    let languageRepos = languagesResponse.data.data.viewer.repositories.nodes;
+    for (const repo of languageRepos) {
+      let languages = repo.languages.nodes.map((lang: { name: string }) => lang.name);
+      languagesPerRepo.set(repo.name, languages);
+    }
+
+    // Commits processing
+    const commitsResponse = await axios.post('https://api.github.com/graphql', commitsQuery, {
       headers: {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json',
       },
     });
 
-    const repos = response.data.data.viewer.repositories.nodes;
+    const repos = commitsResponse.data.data.viewer.repositories.nodes;
     let commitsArray: {
       repoName: string,
       commitMessage: string,
@@ -125,6 +159,7 @@ apiRouter.get('/commits', async (req, res) => {
       branch: string,
       commitUrl: string,
       repoUrl: string,
+      languages: string[]
     }[] = []
     for (const repo of repos) {
       for (const commits of repo.refs.nodes) {
@@ -137,6 +172,7 @@ apiRouter.get('/commits', async (req, res) => {
           dateString: new Date(commit.committedDate).toLocaleString(),
           commitUrl: commit.url,
           repoUrl: repo.url,
+          languages: languagesPerRepo.get(repo.name) || []
         })
       }
     }
@@ -155,8 +191,6 @@ apiRouter.get('/commits', async (req, res) => {
     return
   }
 })
-
-
 
 
 
