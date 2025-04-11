@@ -2,7 +2,8 @@ import {useEffect, useState} from "react";
 import Commits from "../../../service/types/Commits.ts";
 import axios from "axios";
 import { useTheme } from "../ThemeSetter.tsx";
-import {Spinner} from "react-bootstrap";
+import {Spinner, Stack} from "react-bootstrap";
+import {CommitCard} from "./CommitCard.tsx";
 
 type LoadingState = "loading" | "success" | "error";
 
@@ -33,9 +34,15 @@ export function LatestCommits() {
   }
 
   function renderCommits(commits: Commits[]) {
-    return commits.map((commit, index) => (
-      <p className={ getStyle.text }  key={index}>{commit.commitMessage}</p>
-    ));
+    let cards = commits.map((commit, index) => (
+      <CommitCard key={`i${index}`} commit={commit} />
+    ))
+
+    return (
+      <Stack gap={3}>
+        {cards}
+      </Stack>
+    )
   }
 
   return (
