@@ -36,7 +36,7 @@ export function CommitCard({ commit }: CommitCardProps) {
   }
 
   return (
-    <Container className={`${getStyle.contactFormBackground} text-white pt-3 pb-1 rounded-3`}>
+    <Container className={`${getStyle.contactFormBackground} text-white pt-3 pb-1 px-md-4 rounded-4`}>
       <Row className="d-flex justify-content-between">
         <Col className="text-start">
           <h5 style={{color: getStyle.primaryColor}}>{`Repo Name:  `}
@@ -77,11 +77,11 @@ export function CommitCard({ commit }: CommitCardProps) {
       </Row>
 
       <Row className="d-flex justify-content-between">
-        <Col>
+        <Col md={6}>
           <h6>Tech Stack:</h6>
         </Col>
-        <Col>
-          <Stack direction="horizontal" gap={2}>
+        <Col md={6}>
+          <Stack direction="horizontal" gap={2} className="flex-wrap">
             {commit.languages.map((language, index) => (
               <>
                 {getLanguageIconComponent(language) == null
@@ -105,9 +105,9 @@ interface LanguageStackProps {
 
 export function LanguageStack({ devicon, language, index}: LanguageStackProps) {
   return (
-    <div className={`${index == 0 ? "ms-auto" : ""} d-flex flex-column align-items-center`}>
+    <div className={`${index == 0 ? "ms-md-auto" : ""} d-flex flex-column align-items-center`}>
         <i className={devicon} style={{fontSize: '40px'}}></i>
-        <p>{language}</p>
+        <p className="h6">{language}</p>
     </div>
   );
 }
