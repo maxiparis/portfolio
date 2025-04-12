@@ -2,6 +2,7 @@ import Commits from "../../../service/types/Commits.ts";
 import {Container, Row, Col, Stack} from "react-bootstrap";
 import {useTheme} from "../ThemeSetter.tsx";
 import React from "react";
+import {LanguageStack} from "./LanguageStack.tsx";
 
 interface CommitCardProps {
   commit: Commits
@@ -36,7 +37,8 @@ export function CommitCard({ commit }: CommitCardProps) {
   }
 
   return (
-    <Container className={`${getStyle.contactFormBackground} text-white pt-3 pb-1 px-md-4 rounded-4`}>
+    <Container className={`zoom-container ${getStyle.contactFormBackground} text-white pt-3 pb-1 rounded-3`}
+    >
       <Row className="d-flex justify-content-between">
         <Col className="text-start">
           <h5 style={{color: getStyle.primaryColor}}>{`Repo Name:  `}
@@ -55,16 +57,15 @@ export function CommitCard({ commit }: CommitCardProps) {
       </Row>
 
       <Row>
-        <h6>Commit
-          Message: {commit.commitMessage.length > 100 ? `${commit.commitMessage.slice(0, 100)}...` : commit.commitMessage}</h6>
+        <h6 className={getStyle.text}>Commit Message: {commit.commitMessage.length > 100 ? `${commit.commitMessage.slice(0, 100)}...` : commit.commitMessage}</h6>
       </Row>
 
       <Row>
-        <h6>Date: {commit.dateString}</h6>
+        <h6 className={getStyle.text}>Date: {commit.dateString}</h6>
       </Row>
 
       <Row>
-        <h6>
+        <h6 className={getStyle.text}>
           <a
             href={commit.commitUrl}
             target="_blank"
@@ -78,7 +79,7 @@ export function CommitCard({ commit }: CommitCardProps) {
 
       <Row className="d-flex justify-content-between">
         <Col md={6}>
-          <h6>Tech Stack:</h6>
+          <h6 className={getStyle.text}>Tech Stack:</h6>
         </Col>
         <Col md={6}>
           <Stack direction="horizontal" gap={2} className="flex-wrap">
@@ -97,17 +98,3 @@ export function CommitCard({ commit }: CommitCardProps) {
   );
 }
 
-interface LanguageStackProps {
-    devicon: string,
-    language: string,
-    index: number
-}
-
-export function LanguageStack({ devicon, language, index}: LanguageStackProps) {
-  return (
-    <div className={`${index == 0 ? "ms-md-auto" : ""} d-flex flex-column align-items-center`}>
-        <i className={devicon} style={{fontSize: '40px'}}></i>
-        <p className="h6">{language}</p>
-    </div>
-  );
-}
