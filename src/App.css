@@ -70,7 +70,7 @@ body {
 }
 
 .contact-card-light {
-  background-color: #c2c2c2;
+  background-color: rgba(79, 92, 107, 0.18);
   border-radius: 25px;
   max-width: 900px
 }
