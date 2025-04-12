@@ -72,9 +72,15 @@ export default function Hero() {
                     e.currentTarget.style.color = "black";
                     e.currentTarget.style.boxShadow = "none";
                   }}
+                  onClick={() => {
+                    const section = document.getElementById("email-section");
+                    if (section) {
+                      section.scrollIntoView({behavior: "smooth"});
+                    }
+                  }}
                 >
                   <i className="bi bi-lightning-fill me-2"></i>
-                  Call To Action
+                  Let's Talk
                 </Button>
               </Stack>
             </Col>
