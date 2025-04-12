@@ -5,15 +5,13 @@ import { useTheme } from "./components/ThemeSetter.js";
 import {useEffect} from "react";
 import NavigationBar from "./components/Navbar.tsx";
 import SiteFooter from "./components/SiteFooter.tsx";
-import Hero from "./components/Hero.tsx";
 import {Container} from "react-bootstrap";
+import Home from "./components/home/Home.tsx";
+import About from "./components/about/About.tsx";
+import Projects from "./components/projects/Projects.tsx";
+import Contact from "./components/contact/Contact.tsx";
 
-function About() {
-    const { theme } = useTheme();
-    return (
-      <h1 className={theme === "light" ? "text-dark" : "text-white"}>ABOUT</h1>
-    )
-}
+
 function App() {
     const { theme } = useTheme();
 
@@ -23,11 +21,11 @@ function App() {
         const body = document.body
         if (root) {
             if (theme === "light") {
-                root.style.backgroundColor = "#ffffff"; // Set the background color you want
-                body.style.backgroundColor = "#ffffff"; // Set the background color you want
+                root.style.backgroundColor = "#ffffff";
+                body.style.backgroundColor = "#ffffff";
             } else {
-                root.style.backgroundColor = "#000000"; // Set the background color you want
-                body.style.backgroundColor = "#000000"; // Set the background color you want
+                root.style.backgroundColor = "#000000";
+                body.style.backgroundColor = "#000000";
             }
         }
     }, [theme])
@@ -38,10 +36,12 @@ function App() {
             <NavigationBar />
             <Container
               className="space-to-navbar body d-flex flex-column flex-grow-1 justify-content-top align-items-center">
-            <Routes>
-                <Route path="/" element={<Hero />} />
-                <Route path="/about" element={<About />} />
-            </Routes>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/projects" element={<Projects />}/>
+                    <Route path="/contact" element={<Contact />}/>
+                </Routes>
             </Container>
 
             <SiteFooter />

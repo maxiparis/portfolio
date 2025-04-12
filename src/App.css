@@ -57,6 +57,71 @@ body {
   margin: 1rem;
 }
 
+
 .space-to-navbar {
   padding-top: 56px;
+}
+
+/* Contact Form */
+.contact-card-dark {
+  background-color: #252525;
+  border-radius: 25px;
+  max-width: 900px
+}
+
+.contact-card-light {
+  background-color: rgba(79, 92, 107, 0.18);
+  border-radius: 25px;
+  max-width: 900px
+}
+
+
+.input-dark.form-label {
+  color: #bbbbbb;
+}
+
+.input-dark.form-control {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  color: #bbbbbb;
+}
+
+.input-dark.form-control:focus {
+  color: #bbbbbb; !important;
+}
+
+.input-light.form-label {
+  color: #191919;
+}
+
+.input-light.form-control {
+  background-color: rgb(255, 255, 255) !important;
+  color: #020000;
+}
+
+.input-light.form-control:focus {
+  color: #020000;
+}
+
+.send-message-button.button {
+  background-color: #405059;
+  color: #ffffff;
+  border-radius: 25px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+/*.toast-container {*/
+/*  z-index: 1056; !* Higher than Bootstrap's normal navbar z-index (1055) *!*/
+/*}*/
+
+
+.zoom-container {
+  /* Smooth zooming transition */
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer; /* Optional: change cursor to indicate hoverable container */
+}
+
+/* When the mouse hovers over the container */
+.zoom-container:hover {
+  transform: scale(1.03); /* Zooms the container by 5% */
 }
