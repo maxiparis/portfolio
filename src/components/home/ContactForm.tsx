@@ -41,7 +41,10 @@ export default function ContactForm() {
 
   return (
     <>
-      <Container className={`${getStyle.contactFormBackground} py-3 mb-5 mt-3`}>
+      <Container
+        id="email-section"
+        className={`${getStyle.contactFormBackground} py-3 mb-5 mt-3`}
+      >
         <Form
           className="px-md-5 px-xs-1"
           // @ts-ignore

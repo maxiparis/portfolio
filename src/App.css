@@ -113,3 +113,15 @@ body {
 /*.toast-container {*/
 /*  z-index: 1056; !* Higher than Bootstrap's normal navbar z-index (1055) *!*/
 /*}*/
+
+
+.zoom-container {
+  /* Smooth zooming transition */
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer; /* Optional: change cursor to indicate hoverable container */
+}
+
+/* When the mouse hovers over the container */
+.zoom-container:hover {
+  transform: scale(1.03); /* Zooms the container by 5% */
+}

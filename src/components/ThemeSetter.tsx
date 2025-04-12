@@ -13,6 +13,9 @@ interface ThemeContextType {
         rocketColor: string,
         contactForm: string,
         contactFormBackground: string,
+        primaryColor: string,
+        secondaryColor: string,
+        accentColor: string,
     }
 }
 
@@ -38,7 +41,10 @@ export function ThemeSetter({ children }: { children: React.ReactNode }) {
             themeVariant: "outline-dark",
             rocketColor: "text-primary",
             contactForm: "input-light",
-            contactFormBackground: "contact-card-light"
+            contactFormBackground: "contact-card-light",
+            primaryColor: "#03669b",
+            secondaryColor: "#2ad2e5",
+            accentColor: "#ff6a38",
         },
         dark: {
             text: "text-white",
@@ -46,7 +52,10 @@ export function ThemeSetter({ children }: { children: React.ReactNode }) {
             themeVariant: "outline-light",
             rocketColor: "text-info",
             contactForm: "input-dark",
-            contactFormBackground: "contact-card-dark"
+            contactFormBackground: "contact-card-dark",
+            primaryColor: "#64c7fc",
+            secondaryColor: "#1ac3d5",
+            accentColor: "#c73200",
         },
     };
 
