@@ -24,5 +24,6 @@ sketch
 /service/index.js
 *.sh
 /dist
+/service/dist
 
 # End of https://www.toptal.com/developers/gitignore/api/react
