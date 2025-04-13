@@ -1,12 +1,29 @@
+import {Col, ProgressBar, Row, Stack} from "react-bootstrap";
+import {LanguageStack} from "./LanguageStack.tsx";
+
 export function SkillsList() {
+
+
   return (
-    <>
-      <h4>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </h4>
-    </>
+    <Stack className={"mt-5"} gap={3}>
+      <Row>
+        <Col xs={2}>
+          <LanguageStack devicon="devicon-swift-plain colored" language="Swift" index={3}/>
+        </Col>
+        <Col xs={10}>
+          <div className="progress" style={{backgroundColor: '#000000'}}>
+            {/*@ts-ignore*/}
+            <div
+              className="progress-bar bg-success progress-bar-striped progress-bar-animated"
+              role="progressbar"
+              aria-valuenow="60"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style={{width: '83%'}}
+            />
+          </div>
+        </Col>
+      </Row>
+    </Stack>
   );
 }
