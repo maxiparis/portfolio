@@ -3,7 +3,7 @@ import ContactForm from "./ContactForm.tsx";
 import {useTheme} from "../ThemeSetter.tsx";
 import {LatestCommits} from "./LatestCommits.tsx";
 import {HomeObject} from "./HomeObject.tsx";
-import {ProjectsList} from "./ ProjectsList.tsx";
+import {ProjectsList} from "./ProjectsList.tsx";
 import {SkillsList} from "./SkillsList.tsx";
 
 export default function Home() {
