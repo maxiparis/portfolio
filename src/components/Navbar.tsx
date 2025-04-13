@@ -1,4 +1,4 @@
-import {Button, Container, Nav, Navbar} from "react-bootstrap";
+import {Button, Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {useTheme} from "./ThemeSetter.tsx";
 import {NavLink} from "react-router-dom";
 
@@ -21,8 +21,15 @@ export default function NavigationBar() {
                             <Nav.Link as={NavLink} className={getStyle.text} to="about">About</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link as={NavLink} className={getStyle.text} to="projects">Projects</Nav.Link>
+                            <NavDropdown title="Projects" className={getStyle.text}>
+                                <NavDropdown.Item as={NavLink} to="projects/contributions">Contributions to BYU app</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to="projects/conosur">Cono Sur</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to="projects/focusflow">FocusFlow</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to="projects/improvify">Improvify</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to="projects/learnspanish">Learn Spanish</NavDropdown.Item>
+                            </NavDropdown>
                         </Nav.Item>
+
                         <Nav.Item>
                             <Nav.Link as={NavLink} className={getStyle.text} to="contact">Contact</Nav.Link>
                         </Nav.Item>
