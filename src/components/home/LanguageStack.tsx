@@ -10,25 +10,35 @@ export function LanguageStack({ language, index}: LanguageStackProps) {
   const { getStyle } = useTheme();
 
   function getLanguageIconComponent(language: string): string | null {
-    switch (language) {
-      case "Swift":
+    switch (language.toLowerCase()) {
+      case "swift":
         return getStyle.icons.Swift
-      case "JavaScript":
+      case "xcode":
+        return getStyle.icons.XCode
+      case "swiftui":
+        return getStyle.icons.SwiftUI
+      case "react":
+        return getStyle.icons.React
+      case "vue":
+        return getStyle.icons.Vue
+      case "javascript":
         return getStyle.icons.JavaScript
-      case "TypeScript":
+      case "typescript":
         return getStyle.icons.TypeScript
-      case "Java":
+      case "java":
         return getStyle.icons.Java
-      case "Shell":
+      case "shell":
         return getStyle.icons.Shell
-      case "CSS":
+      case "css":
         return getStyle.icons.CSS
-      case "HTML":
+      case "html":
         return getStyle.icons.HTML
-      case "Dockerfile":
+      case "dockerfile":
         return getStyle.icons.Dockerfile
-      case "Lua":
+      case "lua":
         return getStyle.icons.Lua
+      case "git":
+        return getStyle.icons.Git
       default:
         return getStyle.icons.default
     }
