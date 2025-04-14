@@ -43,7 +43,6 @@ export function LanguageStack({ language, index}: LanguageStackProps) {
 
     return (
       <div className={`${index == 0 ? "ms-md-auto" : ""} d-flex flex-column align-items-center`}>
-        {/*<i className={getLanguageIconComponent(language)!} style={{fontSize: '40px'}}></i>*/}
         <i className={getLanguageIconComponent(language)!} style={{fontSize: '40px', backgroundColor: background}}></i>
         <p className={`h6 ${getStyle.text}`}>{language}</p>
       </div>

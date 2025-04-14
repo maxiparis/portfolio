@@ -53,10 +53,10 @@ export function CommitCard({ commit }: CommitCardProps) {
       </Row>
 
       <Row className="d-flex justify-content-between">
-        <Col md={6}>
+        <Col md={2}>
           <h6 className={getStyle.text}>Tech Stack:</h6>
         </Col>
-        <Col md={6}>
+        <Col md={10}>
           <Stack direction="horizontal" gap={2} className="flex-wrap">
             {commit.languages.map((language, index) => (
               <LanguageStack  language={language} index={index}/>
