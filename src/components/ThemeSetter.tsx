@@ -17,6 +17,18 @@ interface ThemeContextType {
         primaryColor: string,
         secondaryColor: string,
         accentColor: string,
+        icons: {
+            Swift: string,
+            JavaScript: string,
+            TypeScript: string,
+            Java: string,
+            Shell: string,
+            CSS: string,
+            HTML: string,
+            Dockerfile: string,
+            Lua: string,
+            default: string,
+        }
     }
 }
 
@@ -47,6 +59,18 @@ export function ThemeSetter({ children }: { children: React.ReactNode }) {
             textInversed: "text-white",
             secondaryColor: "#2ad2e5",
             accentColor: "#ff6a38",
+            icons: {
+                Swift: "devicon-swift-plain colored",
+                JavaScript: "devicon-javascript-plain colored",
+                TypeScript: "devicon-typescript-plain colored",
+                Java: "devicon-java-plain colored",
+                Shell: "devicon-powershell-plain colored",
+                CSS: "devicon-css3-plain colored",
+                HTML: "devicon-html5-plain colored",
+                Dockerfile: "devicon-docker-plain colored",
+                Lua: "devicon-lua-plain colored",
+                default:"bi bi-question-circle",
+            }
         },
         dark: {
             text: "text-white",
@@ -59,6 +83,18 @@ export function ThemeSetter({ children }: { children: React.ReactNode }) {
             primaryColor: "#64c7fc",
             secondaryColor: "#1ac3d5",
             accentColor: "#c73200",
+            icons: {
+                Swift: "devicon-swift-plain colored",
+                JavaScript: "devicon-javascript-plain colored",
+                TypeScript: "devicon-typescript-plain colored",
+                Java: "devicon-java-plain colored",
+                Shell: "devicon-powershell-plain",
+                CSS: "devicon-css3-plain colored",
+                HTML: "devicon-html5-plain colored",
+                Dockerfile: "devicon-docker-plain colored",
+                Lua: "devicon-lua-plain",
+                default:"bi bi-question-circle",
+            }
         },
     };
 
