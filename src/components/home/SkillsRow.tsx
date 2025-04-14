@@ -2,12 +2,14 @@ import {useTheme} from "../ThemeSetter.tsx";
 import {Col, Row} from "react-bootstrap";
 import {LanguageStack} from "./LanguageStack.tsx";
 
+export type BootstrapColor = "success" | "danger" | "warning" | "info" | "primary" | "secondary" | "light" | "dark";
 export interface SkillsRowProps {
   language: string,
   percentage: number,
+  bootstrapColor: BootstrapColor,
 }
 
-export function SkillsRow({language, percentage}: SkillsRowProps) {
+export function SkillsRow({language, percentage, bootstrapColor}: SkillsRowProps) {
   const { getStyle } = useTheme();
 
   return (
@@ -19,7 +21,7 @@ export function SkillsRow({language, percentage}: SkillsRowProps) {
         <div className="progress" style={{backgroundColor: getStyle.background}}>
           {/*@ts-ignore*/}
           <div
-            className="progress-bar bg-success progress-bar-striped progress-bar-animated"
+            className={`progress-bar bg-${bootstrapColor} progress-bar-striped progress-bar-animated`}
             role="progressbar"
             aria-valuenow={ percentage }
             aria-valuemin="0"
