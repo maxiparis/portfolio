@@ -2,9 +2,11 @@ import '../App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React, {createContext, useContext, useMemo, useState} from "react";
 
+export type Themes = "light" | "dark"
+
 // Define the ThemeContextType interface
 interface ThemeContextType {
-    theme: string;
+    theme: Themes;
     toggleTheme: () => void;
     getStyle: {
         text: string,
@@ -13,9 +15,11 @@ interface ThemeContextType {
         rocketColor: string,
         contactForm: string,
         contactFormBackground: string,
+        textInversed: string,
         primaryColor: string,
         secondaryColor: string,
         accentColor: string,
+        background: string
     }
 }
 
@@ -33,7 +37,7 @@ export const useTheme = () => {
 
 // ThemeSetter component to provide the theme context
 export function ThemeSetter({ children }: { children: React.ReactNode }) {
-    const [theme, setTheme] = useState("dark");
+    const [theme, setTheme] = useState<Themes>("dark");
     const styles = {
         light: {
             text: "text-dark",
@@ -43,8 +47,10 @@ export function ThemeSetter({ children }: { children: React.ReactNode }) {
             contactForm: "input-light",
             contactFormBackground: "contact-card-light",
             primaryColor: "#03669b",
+            textInversed: "text-white",
             secondaryColor: "#2ad2e5",
             accentColor: "#ff6a38",
+            background: "#ffffff",
         },
         dark: {
             text: "text-white",
@@ -53,9 +59,11 @@ export function ThemeSetter({ children }: { children: React.ReactNode }) {
             rocketColor: "text-info",
             contactForm: "input-dark",
             contactFormBackground: "contact-card-dark",
+            textInversed: "text-dark",
             primaryColor: "#64c7fc",
             secondaryColor: "#1ac3d5",
             accentColor: "#c73200",
+            background: "#000000",
         },
     };
 

@@ -110,6 +110,8 @@ body {
   margin: 1rem;
 }
 
+
+
 /*.toast-container {*/
 /*  z-index: 1056; !* Higher than Bootstrap's normal navbar z-index (1055) *!*/
 /*}*/
@@ -124,4 +126,8 @@ body {
 /* When the mouse hovers over the container */
 .zoom-container:hover {
   transform: scale(1.03); /* Zooms the container by 5% */
+}
+
+.custom-progress .progress {
+  background-color: #bb1010; /* Change the background of the unfilled bar */
 }
