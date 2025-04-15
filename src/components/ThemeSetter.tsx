@@ -2,9 +2,11 @@ import '../App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React, {createContext, useContext, useMemo, useState} from "react";
 
+export type Themes = "light" | "dark"
+
 // Define the ThemeContextType interface
 interface ThemeContextType {
-    theme: string;
+    theme: Themes;
     toggleTheme: () => void;
     getStyle: {
         text: string,
@@ -17,24 +19,7 @@ interface ThemeContextType {
         primaryColor: string,
         secondaryColor: string,
         accentColor: string,
-        background: string,
-        icons: {
-            Swift: string,
-            SwiftUI: string,
-            XCode: string,
-            JavaScript: string,
-            TypeScript: string,
-            Java: string,
-            Shell: string,
-            React: string,
-            Vue: string,
-            CSS: string,
-            HTML: string,
-            Dockerfile: string,
-            Lua: string,
-            Git: string,
-            default: string,
-        }
+        background: string
     }
 }
 
@@ -52,7 +37,7 @@ export const useTheme = () => {
 
 // ThemeSetter component to provide the theme context
 export function ThemeSetter({ children }: { children: React.ReactNode }) {
-    const [theme, setTheme] = useState("dark");
+    const [theme, setTheme] = useState<Themes>("dark");
     const styles = {
         light: {
             text: "text-dark",
@@ -66,23 +51,6 @@ export function ThemeSetter({ children }: { children: React.ReactNode }) {
             secondaryColor: "#2ad2e5",
             accentColor: "#ff6a38",
             background: "#ffffff",
-            icons: {
-                Swift: "devicon-swift-plain colored",
-                SwiftUI: "devicon-swift-plain colored",
-                XCode: "devicon-xcode-plain colored",
-                JavaScript: "devicon-javascript-plain colored",
-                TypeScript: "devicon-typescript-plain colored",
-                Java: "devicon-java-plain colored",
-                Shell: "devicon-powershell-plain colored",
-                React: "devicon-react-original colored",
-                Vue: "devicon-vuejs-plain colored",
-                CSS: "devicon-css3-plain colored",
-                HTML: "devicon-html5-plain colored",
-                Dockerfile: "devicon-docker-plain colored",
-                Lua: "devicon-lua-plain colored",
-                Git: "devicon-git-plain colored",
-                default:"bi bi-question-circle",
-            }
         },
         dark: {
             text: "text-white",
@@ -96,23 +64,6 @@ export function ThemeSetter({ children }: { children: React.ReactNode }) {
             secondaryColor: "#1ac3d5",
             accentColor: "#c73200",
             background: "#000000",
-            icons: {
-                Swift: "devicon-swift-plain colored",
-                SwiftUI: "devicon-swift-plain colored",
-                XCode: "devicon-xcode-plain colored",
-                JavaScript: "devicon-javascript-plain colored",
-                TypeScript: "devicon-typescript-plain colored",
-                Java: "devicon-java-plain colored",
-                Shell: "devicon-powershell-plain",
-                React: "devicon-react-original colored",
-                Vue: "devicon-vuejs-plain colored",
-                CSS: "devicon-css3-plain colored",
-                HTML: "devicon-html5-plain colored",
-                Dockerfile: "devicon-docker-plain colored",
-                Lua: "devicon-lua-plain",
-                Git: "devicon-git-plain colored",
-                default:"bi bi-question-circle",
-            }
         },
     };
 

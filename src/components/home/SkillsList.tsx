@@ -50,17 +50,15 @@ export function SkillsList() {
     },
     {
       name: "Bootstrap",
-      percentage: 80,
+      percentage: 70,
       color: "primary"
     }
   ]
 
-  const randomBoostrapColors: BootstrapColor[] = ["primary", "success", "danger", "warning", "info"];
-
   function skillsRows() {
     return skills
       .sort((a, b) => b.percentage - a.percentage)
-      .map((skill, index) => (
+      .map((skill) => (
         <>
           <SkillsRow
             language={skill.name}
