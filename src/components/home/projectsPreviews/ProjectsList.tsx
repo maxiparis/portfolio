@@ -1,5 +1,5 @@
 import {Button, Col, Container, Row, Stack} from "react-bootstrap";
-import {useTheme} from "../ThemeSetter.tsx";
+import {useTheme} from "../../ThemeSetter.tsx";
 import {ProjectCard} from "./ProjectsCards.tsx";
 
 export interface ProjectPreview {
@@ -18,7 +18,7 @@ export function ProjectsList() {
         "views and the Classes widget, as well as fixing key issues in the Home Screen. I led the development of the " +
         "Home Screen search functionality and created an interactive Intro Tour to support the app’s redesign—enhancing " +
         "both usability and onboarding.",
-      link: "http://example.com",
+      link: "projects/contributions",
       image: "/assets/picture/byu.png",
     },
     {
@@ -29,7 +29,7 @@ export function ProjectsList() {
         "recipe fields, including the title, description, instructions, and categories. Favorites can be saved, and users " +
         "can create entirely new recipes and categories. The app uses SwiftData for local persistence and supports " +
         "NavigationSplitView to deliver an optimized experience for iPad users.",
-      link: "http://example.com",
+      link: "projects/conosur",
       image: "/assets/picture/recipes.png",
     },
     {
@@ -40,7 +40,7 @@ export function ProjectsList() {
         "background for uninterrupted focus. Users receive timely alerts as tasks approach, reach, or exceed their " +
         "time limits. The app also supports Live Activities, allowing users to monitor their sessions directly from the " +
         "Lock Screen or Dynamic Island without opening the app.",
-      link: "http://example.com",
+      link: "projects/focusflow",
       image: "/assets/picture/focusflow.png",
     },
     {
@@ -50,7 +50,7 @@ export function ProjectsList() {
         "long-term progress through a dynamic graph that visualizes improvement over time. Users can create both " +
         "daily and weekly habits, set smart reminders, and track their consistency without guilt—making the app ideal " +
         "for personal growth, wellness, and productivity goals. Built using SwiftUI, SwiftData, and SwiftCharts. ",
-      link: "http://example.com",
+      link: "projects/improvify",
       image: "/assets/picture/improvify.png",
     },
     {
@@ -60,7 +60,7 @@ export function ProjectsList() {
         "learning levels like Duolingo. Practice mode features animated, swipeable cards with color-coded definitions, " +
         "while quiz mode offers time-based challenges, bonus points, sound feedback, and score tracking. User progress " +
         "is persisted via UserDefaults, and the app supports both portrait and landscape orientations across devices.",
-      link: "http://example.com",
+      link: "projects/learnspanish",
       image: "/assets/picture/learnSpanish.png",
     }
   ];

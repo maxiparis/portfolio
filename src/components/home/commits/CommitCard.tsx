@@ -1,8 +1,8 @@
-import Commits from "../../../service/types/Commits.ts";
+import Commits from "../../../../service/types/Commits.ts";
 import {Container, Row, Col, Stack} from "react-bootstrap";
-import {useTheme} from "../ThemeSetter.tsx";
+import {useTheme} from "../../ThemeSetter.tsx";
 import React from "react";
-import {LanguageStack} from "./LanguageStack.tsx";
+import {LanguageStack} from "../LanguageStack.tsx";
 
 interface CommitCardProps {
   commit: Commits
