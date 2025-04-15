@@ -11,31 +11,6 @@ interface CommitCardProps {
 export function CommitCard({ commit }: CommitCardProps) {
   const { getStyle } = useTheme();
 
-  function getLanguageIconComponent(language: string): string | null {
-    switch (language) {
-      case "Swift":
-        return "devicon-swift-plain colored"
-      case "JavaScript":
-        return "devicon-javascript-plain colored"
-      case "TypeScript":
-        return "devicon-typescript-plain colored"
-      case "Java":
-        return "devicon-java-plain colored"
-      case "Shell":
-        return "devicon-powershell-plain"
-      case "CSS":
-        return "devicon-css3-plain colored"
-      case "HTML":
-        return "devicon-html5-plain colored"
-      case "Dockerfile":
-        return "devicon-docker-plain colored"
-      case "Lua":
-        return "devicon-lua-plain"
-      default:
-        return "bi bi-question-circle"
-    }
-  }
-
   return (
     <Container className={`zoom-container ${getStyle.contactFormBackground} text-white pt-3 pb-1 rounded-3`}
     >
@@ -78,18 +53,13 @@ export function CommitCard({ commit }: CommitCardProps) {
       </Row>
 
       <Row className="d-flex justify-content-between">
-        <Col md={6}>
+        <Col md={2}>
           <h6 className={getStyle.text}>Tech Stack:</h6>
         </Col>
-        <Col md={6}>
+        <Col md={10}>
           <Stack direction="horizontal" gap={2} className="flex-wrap">
             {commit.languages.map((language, index) => (
-              <>
-                {getLanguageIconComponent(language) == null
-                  ? <p className={index == 0 ? "ms-auto" : ""} key={index}>{language}</p>
-                  : <LanguageStack devicon={getLanguageIconComponent(language)!} language={language} index={index} key={index} />
-                }
-              </>
+              <LanguageStack  language={language} index={index}/>
             ))}
           </Stack>
         </Col>

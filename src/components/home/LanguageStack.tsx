@@ -1,18 +1,29 @@
 import {useTheme} from "../ThemeSetter.tsx";
 import React from "react";
+import {IconProvider} from "../../utils/IconProvider.ts";
 
 interface LanguageStackProps {
-  devicon: string,
   language: string,
-  index: number
+  index?: number
 }
 
-export function LanguageStack({ devicon, language, index}: LanguageStackProps) {
-  const { getStyle } = useTheme();
+export function LanguageStack({ language, index}: LanguageStackProps) {
+  const { theme, getStyle } = useTheme();
+
+  function componentWithIcon(language: string, index: number | undefined) {
+    const background = language == "JavaScript" ? "black" : ""
+
+    return (
+      <div className={`${index == 0 ? "ms-md-auto" : ""} d-flex flex-column align-items-center`}>
+        <i className={IconProvider.getIcon(language, theme)} style={{fontSize: '40px', backgroundColor: background}}></i>
+        <p className={`h6 ${getStyle.text}`}>{language}</p>
+      </div>
+    )
+  }
+
   return (
-    <div className={`${index == 0 ? "ms-md-auto" : ""} d-flex flex-column align-items-center`}>
-      <i className={devicon} style={{fontSize: '40px'}}></i>
-      <p className={`h6 ${getStyle.text}`}>{language}</p>
-    </div>
-  );
+    <>
+      {componentWithIcon(language, index)}
+    </>
+  )
 }

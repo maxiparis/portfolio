@@ -1,24 +1,19 @@
 import Hero from "./Hero.tsx";
-import {Container} from "react-bootstrap";
 import ContactForm from "./ContactForm.tsx";
 import {useTheme} from "../ThemeSetter.tsx";
 import {LatestCommits} from "./LatestCommits.tsx";
+import {HomeObject} from "./HomeObject.tsx";
+import {ProjectsList} from "./ProjectsList.tsx";
+import {SkillsList} from "./SkillsList.tsx";
 
 export default function Home() {
-  const { getStyle } = useTheme();
   return (
    <>
      <Hero />
-
-     <Container className="d-flex flex-column justify-content-center align-items-center pt-5">
-       <h2 className={getStyle.text}>What I have been up to</h2>
-       <LatestCommits />
-     </Container>
-
-     <Container className="d-flex flex-column justify-content-center align-items-center pt-5">
-       <h2 className={getStyle.text}>Let's get in touch</h2>
-       <ContactForm />
-     </Container>
+     <HomeObject title="Check Out My Recent Projects" children={<ProjectsList />} />
+     <HomeObject title="My Expertise and Skillset" children={<SkillsList/>}/>
+     <HomeObject title="What I Have Been Up To" children={<LatestCommits />} />
+     <HomeObject title="Let's Connect" children={<ContactForm />} />
    </>
   )
 }
