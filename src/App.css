@@ -142,3 +142,10 @@ body {
   flex: 0 0 100%;
   min-width: 0;
 }
+
+
+strong {
+  font-weight: bold; /* Makes text bold */
+  color: #ff6600; /* Adds an orange color to the text */
+  transition: color 0.3s ease; /* Smooth color transition */
+}

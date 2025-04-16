@@ -1,6 +1,5 @@
-import {Button, Col, Container, Row, Stack} from "react-bootstrap";
-import {useTheme} from "../../ThemeSetter.tsx";
-import {ProjectCard} from "./ProjectsCards.tsx";
+import { Stack } from "react-bootstrap";
+import { ProjectCard } from "./ProjectsCards.tsx";
 
 export interface ProjectPreview {
   title: string,
