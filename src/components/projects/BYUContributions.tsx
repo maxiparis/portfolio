@@ -21,9 +21,6 @@ export function BYUContributions() {
           <h5 className="text-secondary text-center">
             The app has <strong>4.7 stars</strong> on the App Store, and has over <strong>60,000 downloads.</strong>
           </h5>
-          <h5 className="text-secondary text-center">
-            Here are some of the things I have worked on that I am more excited about:
-          </h5>
 
         </div>
         <div className="d-flex flex-md-row flex-column justify-content-center gap-3">
@@ -36,6 +33,10 @@ export function BYUContributions() {
             See on the App Store
           </Button>
         </div>
+
+        <h5 className="text-secondary text-center mt-5">
+          Here are some of the highlights of my work that I am most excited about:
+        </h5>
       </Stack>
 
       {/* Home Screen */}

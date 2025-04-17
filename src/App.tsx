@@ -50,7 +50,6 @@ function App() {
                         <Route path="improvify" element={ProjectPage(projects.improvifyInfo)}/>
                         <Route path="learnspanish" element={ProjectPage(projects.learnSpanishInfo)}/>
                     </Route>
-                    <Route path="/contact" element={<Contact />}/>
                 </Routes>
             </Container>
 
