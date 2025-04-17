@@ -127,10 +127,11 @@ The app also supports Live Activities, allowing users to monitor their sessions 
       ),
       (
         <a
+          className="d-flex justify-content-center"
           href="https://apps.apple.com/us/app/improvify-habit-tracker/id6742771479?itscg=30200&itsct=apps_box_badge&mttnsubad=6742771479"
-          style={{display: "inline-block"}}
         >
           <img
+            className="text-center"
             src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1741305600"
             alt="Download on the App Store"
             style={{height: 50}}/>
@@ -138,5 +139,7 @@ The app also supports Live Activities, allowing users to monitor their sessions 
       )
     ]
   }
+
+
   return { focusFlowInfo, improvifyInfo };
 }
