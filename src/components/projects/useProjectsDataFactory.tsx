@@ -103,7 +103,6 @@ The app also supports Live Activities, allowing users to monitor their sessions 
     set smart reminders, and track their consistency without guilt—making the app ideal for personal growth, wellness, 
     and productivity goals. Built using SwiftUI, SwiftData, and SwiftCharts.`,
     buttons: [
-      (<OpenRepoButton url={'https://github.com/maxiparis/improvify'} />),
       (
         <a
           className="d-flex justify-content-center"
@@ -113,9 +112,11 @@ The app also supports Live Activities, allowing users to monitor their sessions 
             className="text-center"
             src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1741305600"
             alt="Download on the App Store"
-            style={{height: 50}}/>
+            style={{height: 60}}
+          />
         </a>
-      )
+      ),
+      (<OpenRepoButton url={'https://github.com/maxiparis/improvify'} />),
     ]
   }
 
@@ -158,5 +159,52 @@ The app also supports Live Activities, allowing users to monitor their sessions 
     ]
   }
 
-  return { focusFlowInfo, improvifyInfo, conoSurInfo };
+
+  const learnSpanishInfo: ProjectPageProps = {
+    title: 'Learn Spanish',
+    pictures: [
+      "/assets/picture/learnSpanish/1.png",
+      "/assets/picture/learnSpanish/2.png",
+      "/assets/picture/learnSpanish/3.png",
+      "/assets/picture/learnSpanish/4.png",
+      "/assets/picture/learnSpanish/5.png",
+      "/assets/picture/learnSpanish/6.png",
+      "/assets/picture/learnSpanish/7.png",
+      "/assets/picture/learnSpanish/8.png",
+    ],
+    features: wrappedList([
+      <>The app is organized by topics.</>,
+      <>Each topic includes a <strong>lesson, a practice mode, a quiz mode, and a word list</strong>. Users can mark the Lesson and
+        Practice as completed, but the Quiz will be marked as completed only when all questions are answered
+        correctly.</>,
+      <>Practice Mode: Words are randomized, and progress is displayed. Users can navigate by swiping or tapping
+        buttons.</>,
+      <>Quiz Mode: Shows the highest score, current score, and remaining questions.</>,
+      <>Quiz Mode: <strong>Answering correctly within 20 seconds rewards bonus points.</strong> Users are informed if they lose these
+        points by exceeding the time limit.</>,
+      <>Quiz Mode: <strong>Plays a sound</strong> for correct and incorrect answers.</>,
+      <>Quiz Mode: On the last question, users are redirected to the Topic Intro view.</>,
+      <>Scores, unlocked topics, completed lessons, and other progress details are stored locally on the user's device
+        using <strong>UserDefaults</strong>.</>,
+      <>Supports both <strong>Portrait and Landscape</strong> Modes on all devices.</>,
+      <>Topics remain locked until the previous Lesson is completed, simulating a <strong>progression system</strong> similar to
+        Duolingo.</>,
+    ]),
+    teachStack: wrappedList([
+      <>Swift</>,
+      <>SwiftUI</>,
+      <>UserDefaults</>,
+      <>AVFoundation</>,
+      <>Architecture: MVVM</>
+    ]),
+    description: `A SwiftUI language learning app designed to make vocabulary practice engaging and interactive. 
+    Each topic includes a lesson, practice mode, quiz mode, and a word list—unlocked progressively to simulate 
+    learning levels like Duolingo. Practice mode features animated, swipeable cards with color-coded definitions, 
+    while quiz mode offers time-based challenges, bonus points, sound feedback, and score tracking.`,
+    buttons: [
+      (<OpenRepoButton url={"https://github.com/maxiparis/is543-learn-spanish-pj1"} />)
+    ]
+  }
+
+  return { focusFlowInfo, improvifyInfo, conoSurInfo, learnSpanishInfo };
 }
