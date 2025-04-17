@@ -48,7 +48,7 @@ export function ThemeSetter({ children }: { children: React.ReactNode }) {
             contactFormBackground: "contact-card-light",
             primaryColor: "#03669b",
             textInversed: "text-white",
-            secondaryColor: "#2ad2e5",
+            secondaryColor: "#0c9fb2",
             accentColor: "#ff6a38",
             background: "#ffffff",
         },

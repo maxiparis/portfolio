@@ -1,6 +1,6 @@
-import {useTheme} from "../ThemeSetter.tsx";
+import {useTheme} from "../../ThemeSetter.tsx";
 import {Col, Row} from "react-bootstrap";
-import {LanguageStack} from "./LanguageStack.tsx";
+import {LanguageStack} from "../LanguageStack.tsx";
 
 export type BootstrapColor = "success" | "danger" | "warning" | "info" | "primary" | "secondary" | "light" | "dark";
 export interface SkillsRowProps {

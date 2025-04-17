@@ -1,9 +1,11 @@
-import {useTheme} from "../ThemeSetter.tsx";
+import {useTheme} from "../../ThemeSetter.tsx";
 import {Button, Col, Container, Row} from "react-bootstrap";
 import {ProjectPreview} from "./ProjectsList.tsx";
+import {useNavigate} from "react-router-dom";
 
 export function ProjectCard({project}: {project: ProjectPreview}) {
   const { getStyle } = useTheme();
+  const navigate = useNavigate()
 
   return (
     <Container
@@ -25,7 +27,7 @@ export function ProjectCard({project}: {project: ProjectPreview}) {
             className={`${getStyle.textInversed} no-border w-75 shadow-lg`}
             style={{backgroundColor: getStyle.primaryColor}}
             onClick={() => {
-              window.open(project.link, '_blank');
+              navigate(project.link)
             }}
           >
             View Project

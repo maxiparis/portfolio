@@ -5,15 +5,18 @@ import { useTheme } from "./components/ThemeSetter.js";
 import {useEffect} from "react";
 import NavigationBar from "./components/Navbar.tsx";
 import SiteFooter from "./components/SiteFooter.tsx";
-import {Container} from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Home from "./components/home/Home.tsx";
 import About from "./components/about/About.tsx";
-import Projects from "./components/projects/Projects.tsx";
+import ProjectPage from "./components/projects/ProjectPage.tsx";
 import Contact from "./components/contact/Contact.tsx";
+import { useProjectsDataFactory} from "./components/projects/useProjectsDataFactory.tsx";
+import {BYUContributions} from "./components/projects/BYUContributions.tsx";
 
 
 function App() {
     const { theme } = useTheme();
+    const projects = useProjectsDataFactory()
 
     useEffect(() => {
         // Access the root element and set the background color
@@ -39,8 +42,14 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
-                    <Route path="/projects" element={<Projects />}/>
-                    <Route path="/contact" element={<Contact />}/>
+
+                    <Route path="/projects">
+                        <Route path="contributions" element={<BYUContributions />}/>
+                        <Route path="conosur" element={ProjectPage(projects.conoSurInfo)}/>
+                        <Route path="focusflow" element={ProjectPage(projects.focusFlowInfo)}/>
+                        <Route path="improvify" element={ProjectPage(projects.improvifyInfo)}/>
+                        <Route path="learnspanish" element={ProjectPage(projects.learnSpanishInfo)}/>
+                    </Route>
                 </Routes>
             </Container>
 
