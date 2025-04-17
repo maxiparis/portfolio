@@ -11,6 +11,7 @@ import About from "./components/about/About.tsx";
 import ProjectPage from "./components/projects/ProjectPage.tsx";
 import Contact from "./components/contact/Contact.tsx";
 import { useProjectsDataFactory} from "./components/projects/useProjectsDataFactory.tsx";
+import {BYUContributions} from "./components/projects/BYUContributions.tsx";
 
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
                     <Route path="/about" element={<About />} />
 
                     <Route path="/projects">
-                        <Route path="contributions" element={<div>Contributions Component</div>}/>
+                        <Route path="contributions" element={<BYUContributions />}/>
                         <Route path="conosur" element={ProjectPage(projects.conoSurInfo)}/>
                         <Route path="focusflow" element={ProjectPage(projects.focusFlowInfo)}/>
                         <Route path="improvify" element={ProjectPage(projects.improvifyInfo)}/>
