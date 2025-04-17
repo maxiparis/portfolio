@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
-import Commits from "../../../service/types/Commits.ts";
+import Commits from "../../../../service/types/Commits.ts";
 import axios from "axios";
-import { useTheme } from "../ThemeSetter.tsx";
+import { useTheme } from "../../ThemeSetter.tsx";
 import {Spinner, Stack} from "react-bootstrap";
 import {CommitCard} from "./CommitCard.tsx";
 
