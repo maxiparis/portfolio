@@ -1,6 +1,7 @@
 import {ProjectPageProps} from "./ProjectPage.tsx";
 import {Button} from "react-bootstrap";
 import {useTheme} from "../ThemeSetter.tsx";
+import {OpenRepoButton} from "./OpenRepoButton.tsx";
 
 // ---------------------------------------------
 // ---------------- Custom Hook ----------------
@@ -53,18 +54,7 @@ It guides users through structured Focus Sessions with real-time feedback on rem
 Timers and sessions persist in the background for uninterrupted focus. Users receive timely alerts as tasks approach, reach, or exceed their time limits. 
 The app also supports Live Activities, allowing users to monitor their sessions directly from the Lock Screen or Dynamic Island without opening the app.`,
     buttons: [
-      (
-        <Button
-          onClick={
-            () => {
-              window.open('https://github.com/maxiparis/FocusFlow', '_blank')
-            }
-          }
-        >
-          <i className="bi bi-github" style={{marginRight: '8px'}}></i>
-          See GitHub Repo
-        </Button>
-      ),
+      (<OpenRepoButton url={"https://github.com/maxiparis/FocusFlow"} />),
       (
         <Button
           onClick={
@@ -113,18 +103,7 @@ The app also supports Live Activities, allowing users to monitor their sessions 
     set smart reminders, and track their consistency without guilt—making the app ideal for personal growth, wellness, 
     and productivity goals. Built using SwiftUI, SwiftData, and SwiftCharts.`,
     buttons: [
-      (
-        <Button
-          onClick={
-            () => {
-              window.open('https://github.com/maxiparis/improvify', '_blank')
-            }
-          }
-        >
-          <i className="bi bi-github" style={{marginRight: '8px'}}></i>
-          See GitHub Repo
-        </Button>
-      ),
+      (<OpenRepoButton url={'https://github.com/maxiparis/improvify'} />),
       (
         <a
           className="d-flex justify-content-center"
@@ -140,6 +119,44 @@ The app also supports Live Activities, allowing users to monitor their sessions 
     ]
   }
 
+  const conoSurInfo: ProjectPageProps = {
+    title: 'Cono Sur',
+    pictures: [
+      "/assets/picture/conosur/1.png",
+      "/assets/picture/conosur/2.png",
+      "/assets/picture/conosur/3.png",
+      "/assets/picture/conosur/4.png",
+      "/assets/picture/conosur/5.png",
+      "/assets/picture/conosur/6.png",
+      "/assets/picture/conosur/7.png",
+      "/assets/picture/conosur/8.png",
+    ],
+    features: wrappedList([
+      <>Create, remove, and update Recipes and Categories</>,
+      <>Uses <strong>NavigationSplitView</strong> to allow tab view for iPad users</>,
+      <>Recipes display an image using <strong>AsyncImage</strong> to improve User Interface</>,
+      <><strong>Favorite or unfavorite</strong> recipes</>,
+      <>All fields of a recipe can be modified (title, image URL, description, ingredients, steps, categories, etc)</>,
+      <>Each category is associated with an emoji to improve UI and UX.</>,
+      <>Recipes list view: Search a specific recipe by keyword</>,
+      <>Supports both dark and light modes</>
+    ]),
+    teachStack: wrappedList([
+      <>Swift</>,
+      <>SwiftUI</>,
+      <>SwiftData</>,
+      <>NavigationSplitView</>,
+      <>Architecture: MVVM</>
+    ]),
+    description: `A native iOS app showcasing traditional recipes from southern South America, including countries like 
+    Chile, Argentina, and Paraguay. Each recipe features an image (loaded via AsyncImage), along with key details 
+    such as servings, cook time, ingredients, and step-by-step instructions. Users can edit all recipe fields, 
+    including the title, description, instructions, and categories. Favorites can be saved, and users can create entirely 
+    new recipes and categories.`,
+    buttons: [
+      (<OpenRepoButton url={"https://github.com/maxiparis/is543-recipes"} />)
+    ]
+  }
 
-  return { focusFlowInfo, improvifyInfo };
+  return { focusFlowInfo, improvifyInfo, conoSurInfo };
 }

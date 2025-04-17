@@ -44,7 +44,7 @@ function App() {
 
                     <Route path="/projects">
                         <Route path="contributions" element={<div>Contributions Component</div>}/>
-                        <Route path="conosur" element={<div>Conosur Component</div>}/>
+                        <Route path="conosur" element={ProjectPage(projects.conoSurInfo)}/>
                         <Route path="focusflow" element={ProjectPage(projects.focusFlowInfo)}/>
                         <Route path="improvify" element={ProjectPage(projects.improvifyInfo)}/>
                         <Route path="learnspanish" element={<div>Learn Spanish Component</div>}/>
