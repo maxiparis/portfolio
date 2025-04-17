@@ -14,17 +14,19 @@ export default function ProjectPage(props: ProjectPageProps){
   const { theme, getStyle } = useTheme()
 
   function carouselItems(picturesSources: string[]) {
-    return picturesSources.map(picture => {
-      return (
-        <Carousel.Item key={picture}>
-          <img
-            className="img-fluid px-5 pb-5"
-            src={picture}
-            alt="First slide"
-          />
-        </Carousel.Item>
-      )
-    })
+    {
+      return picturesSources.map(picture => {
+        return (
+          <Carousel.Item key={picture}>
+            <img
+              className="img-fluid px-5 pb-5 rounded-3"
+              src={picture}
+              alt="First slide"
+            />
+          </Carousel.Item>
+        )
+      })
+    }
   }
 
   return (
