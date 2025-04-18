@@ -16,6 +16,8 @@ app.use(express.static("dist"));
 // Routes
 app.use("/api", apiRouter);
 
+
+// Catch-all route to handle wildcard paths and serve the frontend application
 app.get('*wild', (_req, res) => {
   res.sendFile('index.html', { root: 'dist' });
 });
