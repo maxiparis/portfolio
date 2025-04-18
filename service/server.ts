@@ -16,6 +16,12 @@ app.use(express.static("dist"));
 // Routes
 app.use("/api", apiRouter);
 
+
+// Catch-all route to handle wildcard paths and serve the frontend application
+app.get('*wild', (_req, res) => {
+  res.sendFile('index.html', { root: 'dist' });
+});
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
